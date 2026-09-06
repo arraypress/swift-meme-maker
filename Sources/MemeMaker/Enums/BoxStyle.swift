@@ -3,6 +3,8 @@
 //  MemeMaker
 //
 
+//
+
 import Foundation
 
 /// How a template wants its text cased.
@@ -18,6 +20,7 @@ public enum BoxStyle: String, Sendable, Codable {
     /// A lighter face, used by a couple of templates.
     case thin
 
+    /// The text as this style writes it.
     public func apply(to text: String) -> String {
         switch self {
         case .upper: return text.uppercased()
@@ -26,26 +29,4 @@ public enum BoxStyle: String, Sendable, Codable {
         case .default, .none, .thin: return text
         }
     }
-}
-
-/// The typeface a template asks for.
-public enum BoxFont: String, Sendable, Codable {
-    case thick, thin, comic
-
-    /// The macOS font that matches.
-    ///
-    /// Impact is what a meme is set in, and it ships with macOS — under
-    /// `/System/Library/Fonts/Supplemental`, along with Comic Sans MS.
-    public var familyName: String {
-        switch self {
-        case .thick: return "Impact"
-        case .thin: return "Helvetica Neue"
-        case .comic: return "Comic Sans MS"
-        }
-    }
-}
-
-/// Where the text sits inside its box.
-public enum BoxAlign: String, Sendable, Codable {
-    case center, left, right
 }

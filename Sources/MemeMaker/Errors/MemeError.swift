@@ -5,6 +5,7 @@
 
 import Foundation
 
+/// Why a meme could not be made.
 public enum MemeError: Error, LocalizedError, Equatable {
 
     case unknownTemplate(String)
@@ -14,6 +15,7 @@ public enum MemeError: Error, LocalizedError, Equatable {
     case download(String, code: Int)
     case noFont(String)
 
+    /// A one-line reason, for a CLI or a log.
     public var errorDescription: String? {
         switch self {
         case let .unknownTemplate(id):

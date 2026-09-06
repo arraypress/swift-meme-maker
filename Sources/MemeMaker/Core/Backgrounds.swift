@@ -15,6 +15,7 @@ import Foundation
 /// Everything after that first fetch is offline.
 public struct Backgrounds: Sendable {
 
+    /// Where downloaded backgrounds are cached.
     public let directory: URL
 
     public init(directory: URL) {
