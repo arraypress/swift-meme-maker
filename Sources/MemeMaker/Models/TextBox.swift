@@ -5,6 +5,7 @@
 
 //
 
+import CoreGraphics
 import Foundation
 
 /// Where one line of text goes, in fractions of the image.
